@@ -14,11 +14,17 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassWord] = useState('');
     const [err, setErr] = useState(false);
-   
+    const info = useSelector((state)=> state.personalInfo)
     const [showPassWord1,setShowPass1] = useState(true);
     const [errMessage , setErrMessage] = useState('');
     const dispatch = useDispatch();
-    
+    useEffect(()=>{
+        setErr(false)
+        if(info.email){
+            setEmail(info.email);
+        }
+
+    },[])
     showPass1 = ()=>{
             setShowPass1(!showPassWord1)
             
@@ -100,7 +106,7 @@ const Login = () => {
             placeholder={"Xin Nhập Mật Khẩu"} icon={require('../Screen/image/pass.png')}>
             </CustomTextInput>
 
-            <Pressable style={{position:'absolute',right:50,top:40}} onPress={()=>showPass1()}>
+            <Pressable style={{position:'absolute',right:50,top:31}} onPress={()=>showPass1()}>
             {showPassWord1?
                 <Image
                     style={{width:25,height:25}}

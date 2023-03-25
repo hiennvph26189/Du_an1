@@ -4,7 +4,10 @@ import Header from "../common/Header";
 const Main = () => {
     return (
         <View style={{flex:1}}>
-            <Header/>
+            <Header
+                title={'Home'}
+                
+            />
         </View>
     )
 }

@@ -6,7 +6,8 @@ import Main from "../bottom/Main";
 import NewPaper from "../bottom/NewPaper";
 import Profile from "../bottom/Profile";
 import {useDispatch, useSelector} from 'react-redux'
-const Home = () => {
+const Home = (props) => {
+    const navigation = props.navigation;
     const [selectTab, setSelectetab] = useState(0);
     const info = useSelector((state)=> state.personalInfo
 

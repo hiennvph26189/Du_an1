@@ -151,7 +151,7 @@ const NewAccount = () => {
         onChangeText= {text => {setPhone(text);}} 
       placeholder={"Xin Nhập Số Điện Thoại"} icon={require('../Screen/image/phone.png')}>
       </CustomTextInput>
-      {
+        {
             err==true && (<Text style={{marginTop:10,marginLeft:40,color:'red'}}>{errMessage}</Text>)
           }
       <CustomTextInput
