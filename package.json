@@ -9,6 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/drawer": "^6.6.2",
     "@react-navigation/native": "^6.1.6",
@@ -29,6 +31,7 @@
     "react-native-screens": "^3.20.0",
     "react-native-simple-radio-button": "^2.7.4",
     "react-native-socket.io-client": "^1.4.8",
+    "react-native-svg": "13.4.0",
     "react-native-vector-icons": "^9.2.0",
     "react-navigation-drawer": "^2.7.2",
     "react-redux": "^8.0.5",

@@ -8,6 +8,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 import editProfile from "../edit/EditProfile"
 import axios from "axios";
 import Header from "../common/Header";
+
 import {PROFILEMEMBER,URL} from "../../api";
 
 
@@ -21,6 +22,9 @@ const Profile = () => {
     const singOut = ()=>{
        navigation.navigate('Login')
        
+    }
+    const priceProfile = ()=>{
+        navigation.navigate('PriceProfile',{id:info.id})
     }
     const data = {
         id: info.id,
@@ -39,7 +43,11 @@ const Profile = () => {
          
         
     },[isFocused])
-   
+    const price =(price)=>{
+        let x = price;
+        x = x.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
+        return  x;
+}
     return (
         <SafeAreaView style={styles.container}>
             <Header
@@ -110,7 +118,7 @@ const Profile = () => {
                 borderRightWidth: 1
                 
             }]}>
-                    <Title style={styles.title}>{profile.tienTk?profile.tienTk:0} VND</Title>
+                    <Title style={styles.title}>{price(profile.tienTk?profile.tienTk:0)}  </Title>
                     <Caption>Wallet</Caption>
                 </View> 
                 <View style={styles.infoBox}>
@@ -128,7 +136,7 @@ const Profile = () => {
                     </View>
                    
                 </TouchableRipple>
-                <TouchableRipple>
+                <TouchableRipple onPress={()=>{priceProfile()}}>
                     <View style={styles.menuItem}>
                         <Icon name="credit-card" color="#000" size={25}/>
                         <Text style={styles.menuItemText}>
